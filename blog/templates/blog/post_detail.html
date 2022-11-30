@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" href="{% static 'blog/css/styles.css' %}" media="screen">
+        <script src="https://kit.fontawesome.com/26657818f9.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -54,6 +55,11 @@
                         <!-- Post content-->
                         <section class="mb-5">
                         <p>{{ post.content }}</p>
+                        {% if post.file_upload %}
+                            <a href="{{ post.file_upload.url}}"  class="btn btn-outline-success" role="button" download>Download
+                                <i class="fa-regular fa-file"></i> {{ post.get_file_name }}
+                            </a>
+                        {% endif %}
                         </section>
                     </article>
                     <!-- Comments section-->
