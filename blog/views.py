@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Post, Category
 
-class PostList(ListView) :
+class PostList(ListView):
     model = Post
     ordering = '-pk'
 
@@ -34,7 +34,7 @@ def category_page(request, slug):
 
 
     # template_name = 'blog/post_list.html'
-class PostDetail(DetailView) :
+class PostDetail(DetailView):
     model = Post
 
     def get_context_data(self, **kwargs):

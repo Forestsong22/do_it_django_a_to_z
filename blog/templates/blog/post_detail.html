@@ -41,12 +41,21 @@
                         <section class="mb-5">
                             {{ post.content }}
                         </section>
-                        {% if post.file_upload %}
-                            <a href="{{ post.file_upload.url }}"
-                               class="btn btn-outline-primary" role="button" download>
-                                <i class="fa-solid fa-file"></i> {{ post.get_file_name }}
-                            </a>
-                        {% endif %}
+                            {% if post.tags.exists %}
+                                <i class="fas fa-tags"></i>
+                            {% for tag in post.tags.iterator %}
+                                <a href="{{ tag.get_absolute_url }}"><span class="badge badge-pill badge-light">{{ tag }}</span></a>
+                            {% endfor %}
+                            <br/>
+                            <br/>
+                            {% endif %}
+
+                            {% if post.file_upload %}
+                                <a href="{{ post.file_upload.url }}"
+                                  class="btn btn-outline-primary" class="btn btn-success" role="button" download>
+                                   <i class="fa-regular fa-file"></i> {{ post.get_file_name }}
+                                </a>
+                            {% endif %}
                     </article>
                     </div>
                     <!-- Comments section-->
