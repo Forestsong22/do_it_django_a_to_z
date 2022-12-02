@@ -10,7 +10,7 @@ class Tag(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return f'/blog/category/{self.slug}/'
+        return f'/blog/tag/{self.slug}/'
 
 
 class Category(models.Model):
@@ -39,7 +39,7 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    author = models.ForeignKey(User, null =True, on_delete=models.SET_NULL)
+    author = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
 
     category = models.ForeignKey(Category, null=True, blank=True,  on_delete=models.SET_NULL)
 
