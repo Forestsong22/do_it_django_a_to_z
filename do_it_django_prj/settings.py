@@ -23,7 +23,7 @@ SECRET_KEY = 'django-insecure-6&71thv2)kos&60t1&9s56zgunv452bjk6f7*h1d6@beiu1_va
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -35,9 +35,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'django-extensions',
+    # 'django_extensions',
 
     'crispy_forms',
+    'markdownx',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 
     'blog',
     'single_pages',
@@ -130,3 +136,14 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+
+    'allauth.account.auth_backends.AuthenticationBacked',
+
+)
+
+SITE_ID = 1
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'none'
