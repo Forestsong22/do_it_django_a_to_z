@@ -94,6 +94,7 @@ class PostList(ListView):
         return context
 
 
+
 def category_page(request, slug):
     if slug == 'no_category':
         category = '미분류'
@@ -160,3 +161,14 @@ def new_comment(request, pk):
             return redirect(post.get_absolute_url())
     else:
         raise PermissionDenied
+
+
+class CommentUpdate(LoginRequiredMixin, UpdateView):
+    model = Comment
+    form_class = CommentForm
+
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated and request.user == self.get_object().author:
+            return super(CommentUpdate, self).dispatch(request, *args, **kwargs)
+        else:
+            raise PermissionDenied
