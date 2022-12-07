@@ -142,7 +142,7 @@ class TestView(TestCase):
         self.assertIn('Blog', navbar.text)
         self.assertIn('About Me', navbar.text)
 
-        logo_btn = navbar.find('a', text='Do it Django')
+        logo_btn = navbar.find('a', text='다락방')
         self.assertEqual(logo_btn.attrs['href'], '/')
 
         home_btn = navbar.find('a', text='Home')
