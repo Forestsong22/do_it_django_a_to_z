@@ -1,18 +1,182 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>ForestSong</title>
+    <title>다락방 주인</title>
+    <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'single_pages/css/about_me.css' %}" media="screen">
+    <script src="https://kit.fontawesome.com/26657818f9.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav>
-        <a href="/blog/">Blog</a>
-        <a href="/about_me/">About me</a>
-    </nav>
+{% include 'blog/navbar.html' %}
 
-<h1>안녕하세요. ForestSong입니다.</h1>
-<h2>이력</h2>
-<h2>Portfolio</h2>
-<h3>아직은 미완성입니다.</h3>
+<section>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1>안녕하세요. 책방 주인입니다.</h1>
+                <br/>
+                <p class="lead">
+                    노래를 듣는 것과 컴퓨터 게임 하는 것을 좋아합니다.<br/>
+                    데이터 분석으로 돈을 벌고, 퇴근 후에는 운동을 하거나 독서를 합니다.
+                </p>
+
+                <ul>
+                    <li>Forest Song(2023~)</li>
+                    <li>미래융합교육원(2022.10~ 2023.03)</li>
+                </ul>
+                <li>EDUCATION</li>
+                <ul>
+                    <li>빅데이터 박사, 장고공학(Django Engineering), 파이썬대학교(2010.03~2015.09)</li>
+                    <li>빅데이터 석사, 장고공학(Django Engineering), 파이썬대학교(2007.09~2009.08)</li>
+                    <li>빅데이터 학사, 장고공학(Django Engineering), 파이썬대학교(2007.09~2009.08)</li>
+                </ul>
+                <li>PUBLISH</li>
+                <ul>
+                    <li>일상생활과 함께하는 빅데이터(2030)</li>
+                    <li>빅데이터 어떻게 무기가 되는가?(2028)</li>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <img class="img-fluid" src="{% static 'single_pages/images/man2.png' %}">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light margin-for-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>PORTFOLIO</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card" data-toggle="modal" data-target="#yarn">
+                    <img class="card-img-top" src="{% static 'single_pages/images/yarn.jpg' %}">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            추운 겨울 목도리 뜨개질 하기
+                        </h5>
+                        <p>코 잡기, 겉뜨기, 안뜨기를 시작해보겠습니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card" data-toggle="modal" data-target="#baby">
+                    <img class="card-img-top" src="{% static 'single_pages/images/baby.jpg' %}">
+                    <div class="card-body">
+                        <h5 class="card-title">육아 일기</h5>
+                        <p>부모라면 꼭 알아야 할 상식</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card" data-toggle="modal" data-target="#Moon">
+                    <img class="card-img-top" src="{% static 'single_pages/images/Moon.jpg' %}">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                           달 관측 하고 달의 표면 그려보기
+                        </h5>
+                        <p>관찰한 달의 표면을 자기만의 방식대로 그려봅시다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Modal -->
+<div class="modal fade" id="yarn" tabindex="-1" role="dialog" aria-labelledby="yarnModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="yarnModalLabel">목도리 짜기</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <img class="img-fluid" src="{% static 'single_pages/images/yarn.jpg' %}">
+                    </div>
+                    <div class="col-lg-5">
+                        <p>뜨개질을 이용해 쉽게 목도리 짜기 </p>
+                        <a href="https://www.youtube.com/watch?v=1DBy_woyWek">YOUTUBE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="baby" tabindex="-1" role="dialog" aria-labelledby="babyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="babyModalLabel">육아일기</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <img class="img-fluid" src="{% static 'single_pages/images/baby.jpg' %}">
+                    </div>
+                    <div class="col-lg-5">
+                        <p>아이를 위해서 부모라면 알아야 할 상식들</p>
+                        <a href="https://www.youtube.com/watch?v=BNZPrAe1SP4">YOUTUBE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="Moon" tabindex="-1" role="dialog" aria-labelledby="MoonModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="MoonModalLabel">달 관측</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <img class="img-fluid" src="{% static 'single_pages/images/Moon.jpg' %}">
+                    </div>
+                    <div class="col-lg-5">
+                        <p>달을 관측하고 달 표면을 자유롭게 표현해봅시다.</p>
+                        <a href="https://www.youtube.com/watch?v=uNHEufaYbjY">YOUTUBE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fixed-bottom">
+{% include 'blog/footer.html' %}
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 </body>
 </html>
